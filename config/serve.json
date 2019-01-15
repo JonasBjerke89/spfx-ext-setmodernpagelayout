@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {    
+    "default": {
+      "pageUrl": "https://itrsandboxo365.sharepoint.com/sites/johandev/SitePages/Charts.aspx",
+      "customActions": {
+        "1c126852-ec1d-4dbb-bad6-946cb240c9bb": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  }
+}
