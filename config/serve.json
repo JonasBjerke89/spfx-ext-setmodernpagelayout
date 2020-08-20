@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {    
     "default": {
-      "pageUrl": "https://itrsandboxo365.sharepoint.com/sites/johandev/SitePages/Charts.aspx",
+      "pageUrl": "https://jonasbjerke.sharepoint.com/sites/Prototyping/SitePages/Create-a-list-from-Microsoft-Excel.aspx?stay=true",
       "customActions": {
         "1c126852-ec1d-4dbb-bad6-946cb240c9bb": {
           "location": "ClientSideExtension.ApplicationCustomizer",

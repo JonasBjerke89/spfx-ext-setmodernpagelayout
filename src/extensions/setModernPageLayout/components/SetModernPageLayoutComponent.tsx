@@ -39,7 +39,7 @@ export default class SetModernPageLayoutComponent extends React.Component<ISetMo
       }
 
     public render() : React.ReactElement<ISetModernPageLayoutProps> { 
-        if(this.props.context.pageContext.list.title == "Site Pages" && this.props.context.pageContext.list.permissions.hasPermission(SPPermission.manageWeb))
+        if((this.state.editMode || window.location.href.indexOf('Mode=Edit') > -1) && this.props.context.pageContext.list.permissions.hasPermission(SPPermission.manageWeb))
         {
             return (
                 <div className={styles.btnShow}>
@@ -66,6 +66,9 @@ export default class SetModernPageLayoutComponent extends React.Component<ISetMo
                     </Panel>
                 </div>
             );
+        } else
+        {
+            return (<div />)
         }
     }
 
@@ -88,7 +91,7 @@ export default class SetModernPageLayoutComponent extends React.Component<ISetMo
     }
     
     private btnClicked(): void {
-      sp.web.lists.getById(this.props.listId).items.getById(this.props.itemId).update({PageLayoutType: this.state.pageLayout.key}).then(i => {
+      sp.web.lists.getById(this.props.context.pageContext.list.id.toString()).items.getById(this.props.context.pageContext.listItem.id).update({PageLayoutType: this.state.pageLayout.key}).then(i => {
         let text = this.state.editMode ? 'We have changed the page layout. We will refresh your page now and keep it in edit mode. Please accept the refresh by clicking "Leave" in a few seconds.' : 'We have changed the page layout. We will refresh your page now.';
         alert(text);
         

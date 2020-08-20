@@ -52,9 +52,7 @@ export default class SetModernPageLayoutApplicationCustomizer
       const element: React.ReactElement<ISetModernPageLayoutProps> = React.createElement(
         SetModernPageLayoutComponent,
         {
-          context: this.context,
-          listId: this.context.pageContext.list.id.toString(),
-          itemId: this.context.pageContext.listItem.id
+          context: this.context
         }
       );
   
